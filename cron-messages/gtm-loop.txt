@@ -1,0 +1,51 @@
+## GTM Loop - Opportunity Engine
+
+Read these files first:
+1. projects/opportunity-engine/STATE.json (check phase)
+2. projects/opportunity-engine/ACTIVE_OPPORTUNITY.md (what we built)
+3. projects/opportunity-engine/GTM_PLAN.md (previous progress)
+4. projects/opportunity-engine/ARCHITECTURE.md (GTM phases)
+
+### Pre-flight Checks
+- If STATE.json phase is NOT 'gtm-prep', respond 'SKIP: Not in GTM phase'
+- If token_budget_paused is true, respond 'SKIP: Budget paused'
+
+### Your Mission
+Create the full GTM launch package:
+
+1. GOOGLE ADS
+   - Research keywords for the opportunity
+   - **Run Google Ads API forecast** if API access is available (credentials in `~/.openclaw/credentials/google-ads.json.enc`, MCC 960-044-1896)
+   - Get estimated CPC, impressions, clicks at $1K/$3K/$5K monthly budgets
+   - Write ad copy (headlines 30 chars, descriptions 90 chars)
+   - Recommend campaign structure and budget backed by forecast data
+   - Output to GTM_PLAN.md and gtm/google-ads/forecast.md
+
+2. META ADS
+   - Define target audiences (custom, lookalike, interest-based)
+   - Write ad creative concepts (hook, body, CTA)
+   - Recommend campaign structure
+   - Output to GTM_PLAN.md
+
+3. EMAIL SEQUENCES (for Instantly)
+   - Write 3-4 email sequence
+   - Use variables: {{firstName}}, {{companyName}}, {{lastName}}
+   - Include subject lines and body copy
+   - Output to GTM_PLAN.md
+
+4. CALL SCRIPTS
+   - Write cold call opener and full script
+   - Include objection handling
+   - Define lead list criteria
+   - Generate sample CSV for GHL import
+   - Output to GTM_PLAN.md
+
+### When GTM Package Complete:
+1. Update STATE.json: phase='gtm-review'
+2. Update GTM_PLAN.md with completed checklist
+3. Notify Austin on Telegram: 'GTM package ready for {name}. Reply approve gtm to launch.'
+
+### Each Iteration:
+1. Update GTM_PLAN.md with progress
+2. Update STATE.json: last_activity
+3. Respond with summary of what was created

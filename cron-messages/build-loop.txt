@@ -1,0 +1,53 @@
+## Build Loop - Opportunity Engine
+
+Read these files first:
+1. projects/opportunity-engine/STATE.json (check phase)
+2. projects/opportunity-engine/ACTIVE_OPPORTUNITY.md (what to build)
+3. projects/opportunity-engine/BUILD_LOG.md (previous progress)
+4. projects/opportunity-engine/ARCHITECTURE.md (build phases)
+
+### Pre-flight Checks
+- If STATE.json phase is NOT 'building', respond 'SKIP: Not in build phase'
+- If ACTIVE_OPPORTUNITY.md has no opportunity (just template), respond 'SKIP: No active opportunity'
+- If token_budget_paused is true, respond 'SKIP: Budget paused'
+
+### Your Mission
+Build the MVP following these phases:
+1. PLAN: Define MVP scope, create BUILD_PLAN.md (if doesn't exist)
+2. SCAFFOLD: Create project in builds/{opportunity-name}/, set up structure
+3. BUILD: Landing page (HTML/Tailwind or Next.js), core features, integrations
+4. TEST: Run tests, validate flows work
+5. FIX: Address issues, log in BUILD_LOG.md
+6. ITERATE: If not complete, continue. If complete, transition.
+
+### Tech Stack
+- Landing: Vercel/Cloudflare + HTML/Tailwind or Next.js
+- Database: Supabase (if needed)
+- Voice AI: VAPI + n8n + GHL
+- Automation: n8n workflows
+
+### Security Gate (MANDATORY before review)
+Before marking MVP complete, run a full security audit:
+1. **Dependency audit:** Check for known vulnerabilities (`npm audit`, `pip audit`, etc.)
+2. **Input validation:** Verify ALL user inputs are sanitized (XSS, SQL injection, command injection)
+3. **Auth/AuthZ:** Confirm auth flows are secure, tokens are short-lived, no hardcoded secrets
+4. **Secrets:** Ensure NO credentials, API keys, or secrets in code/repo — use env vars or credential store
+5. **HTTPS/TLS:** All external calls use HTTPS, no mixed content
+6. **Rate limiting:** API endpoints have rate limits to prevent abuse
+7. **Error handling:** No stack traces or internal details leaked to users
+8. **OWASP Top 10:** Quick check against common vulnerabilities
+9. Log all findings in `builds/{opportunity-name}/SECURITY_AUDIT.md`
+10. If CRITICAL or HIGH findings exist, fix before marking complete. Do NOT submit for review with open security issues.
+
+### When MVP Complete:
+1. Run the Security Gate above — fix all critical/high findings
+2. Update STATE.json: phase='review', build_iterations++
+3. Update BUILD_LOG.md with final status + security audit summary
+4. Notify Austin on Telegram: 'MVP complete for {name}. Demo: {url}. Security audit: PASS/FAIL. Reply approve mvp to proceed.'
+
+### Each Iteration:
+1. Update BUILD_LOG.md with progress, decisions, blockers
+2. Update STATE.json: build_iterations++, last_activity
+3. Respond with summary of progress
+
+### Output all code to: projects/opportunity-engine/builds/{opportunity-name}/

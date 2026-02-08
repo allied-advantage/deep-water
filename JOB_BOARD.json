@@ -1,0 +1,61 @@
+{
+  "build_queue": [
+    {
+      "project": "aiservicecalls",
+      "status": "review",
+      "priority": 1,
+      "spec_path": "projects/deep-water/PRODUCT_SPEC.md",
+      "started_at": "2026-02-07T00:00:00Z",
+      "last_activity": "2026-02-06T18:10:00Z",
+      "mvp_url": "http://aiservicecalls.com"
+    },
+    {
+      "project": "fuzzy-dupe-detect",
+      "status": "product",
+      "priority": 2,
+      "spec_path": "projects/fuzzy-dupe-detect/PRODUCT_SPEC.md",
+      "started_at": "2026-02-06T22:20:00Z",
+      "last_activity": "2026-02-06T22:20:00Z"
+    },
+    {
+      "project": "insurance",
+      "status": "queued",
+      "priority": 3,
+      "spec_path": null,
+      "started_at": null,
+      "last_activity": null
+    },
+    {
+      "project": "crypto-sar-evidence",
+      "status": "queued",
+      "priority": 4,
+      "spec_path": "projects/crypto-sar-evidence/PRODUCT_SPEC.md",
+      "started_at": null,
+      "last_activity": null
+    },
+    {
+      "project": "crm-auto-update",
+      "status": "queued",
+      "priority": 5,
+      "spec_path": "projects/crm-auto-update/PRODUCT_SPEC.md",
+      "started_at": null,
+      "last_activity": null
+    }
+  ],
+  "gtm_queue": [
+    {
+      "project": "paidup",
+      "status": "in_progress",
+      "priority": 1,
+      "started_at": "2026-02-07T00:00:00Z",
+      "last_activity": "2026-02-07T00:00:00Z"
+    },
+    {
+      "project": "aiservicecalls",
+      "status": "queued",
+      "priority": 2,
+      "started_at": null,
+      "last_activity": null
+    }
+  ]
+}
