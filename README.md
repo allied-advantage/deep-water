@@ -6,7 +6,7 @@
 
 Three autonomous loops running on cron:
 
-1. **Research Loop** (every 4h) — Scans for opportunities, validates, scores
+1. **Research Loop** (every 1h) — Scans for opportunities, validates, scores
 2. **Build Loop** (every 2h) — Builds MVP when opportunity found
 3. **GTM Loop** (every 4h) — Creates launch package when MVP approved
 
