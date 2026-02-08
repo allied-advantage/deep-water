@@ -10,7 +10,7 @@ Three autonomous loops running on cron:
 2. **Build Loop** (every 2h) — Builds MVP when opportunity found
 3. **GTM Loop** (every 4h) — Creates launch package when MVP approved
 
-Austin's role: Approve transitions, provide feedback, close deals.
+Owner's role: Approve transitions, provide feedback, close deals.
 
 ---
 
@@ -32,7 +32,7 @@ cat projects/opportunity-engine/STATE.json
 
 ---
 
-## How Austin Interacts
+## How Owner Interacts
 
 ### Via Telegram Commands
 
